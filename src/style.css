@@ -1,0 +1,26 @@
+main .list {
+  padding: 0 20%;
+}
+
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+.list input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.list-footer {
+  background-color: #f0f2f4;
+}
+
+.list-footer a {
+  align-self: center;
+}
+
+.list-footer a:hover {
+  text-decoration: underline !important;
+  font-weight: 700;
+}
