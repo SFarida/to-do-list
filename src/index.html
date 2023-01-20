@@ -15,16 +15,15 @@
     <div class="list container d-flex justify-content-center flex-column my-5">
       <div class="d-flex justify-content-between">
         <h2>Today's To Do</h2>
-        <a class="text-decoration-none text-secondary" href="javascript:;"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+        <a class="text-decoration-none text-secondary links" id="refresh"><i class="fa fa-refresh" aria-hidden="true"></i></a>
       </div>
       <hr>
       <div class="mb-3">
-        <input type="text" placeholder="Add to your list..." class="form-control" id="input-task">
-        
+        <input type="text" placeholder="Add to your list..." class="form-control" id="inputTask">
       </div>
       <div id="list"></div>
       <div class="list-footer d-flex justify-content-center py-3">
-        <a href="javascript:;" class="text-decoration-none text-secondary">Clear all completed tasks</a>
+        <a class="text-decoration-none text-secondary links" id="removeCompleted">Clear all completed tasks</a>
       </div>
     </div>
   </main>

@@ -12,6 +12,10 @@ main .list {
   border-right: none;
 }
 
+.links {
+  cursor: pointer;
+}
+
 .list-footer {
   background-color: #f0f2f4;
 }
@@ -23,4 +27,8 @@ main .list {
 .list-footer a:hover {
   text-decoration: underline !important;
   font-weight: 700;
+}
+
+li:hover {
+  background-color: #f0f2f4;
 }
