@@ -103,6 +103,4 @@ completed.addEventListener('click', () => {
   renderTasks();
 });
 
-window.onload = () => {
-  renderTasks();
-};
+renderTasks();

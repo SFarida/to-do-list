@@ -11,6 +11,7 @@ addInputField.addEventListener('keypress', (e) => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
     addInputField.value = '';
     window.location.reload();
+    // renderTasks();
   }
 });
 
@@ -26,6 +27,7 @@ export const removeTask = (taskId) => {
   tasks = tasks.filter((task) => task.index !== taskId);
   fixIndex(tasks);
   window.location.reload();
+  // renderTasks();
 };
 
 export const editTast = (id) => {
@@ -40,6 +42,7 @@ export const editTast = (id) => {
       }
       localStorage.setItem('tasks', JSON.stringify(tasks));
       window.location.reload();
+      // renderTasks();
     }
   });
 };
