@@ -1,12 +1,13 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-loop-func */
+/* eslint-disable  import/no-cycle */
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { removeTask, editTast } from './modules/tasks.js';
 
 let tasks = [];
 
-const renderTasks = () => {
+export const renderTasks = () => {
   const container = document.getElementById('list');
   container.replaceChildren();
   tasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -104,3 +105,5 @@ completed.addEventListener('click', () => {
 });
 
 renderTasks();
+
+export { renderTasks as default };

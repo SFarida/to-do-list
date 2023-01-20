@@ -1,3 +1,7 @@
+/* eslint-disable  import/no-cycle */
+/* eslint-disable import/extensions */
+import { renderTasks } from '../index.js';
+
 const addInputField = document.getElementById('inputTask');
 addInputField.addEventListener('keypress', (e) => {
   const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -10,8 +14,7 @@ addInputField.addEventListener('keypress', (e) => {
     tasks.push(taskObj);
     localStorage.setItem('tasks', JSON.stringify(tasks));
     addInputField.value = '';
-    window.location.reload();
-    // renderTasks();
+    renderTasks();
   }
 });
 
@@ -26,8 +29,7 @@ export const removeTask = (taskId) => {
   let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
   tasks = tasks.filter((task) => task.index !== taskId);
   fixIndex(tasks);
-  window.location.reload();
-  // renderTasks();
+  renderTasks();
 };
 
 export const editTast = (id) => {
@@ -41,8 +43,7 @@ export const editTast = (id) => {
         }
       }
       localStorage.setItem('tasks', JSON.stringify(tasks));
-      window.location.reload();
-      // renderTasks();
+      renderTasks();
     }
   });
 };
