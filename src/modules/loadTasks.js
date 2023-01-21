@@ -27,10 +27,17 @@ export const renderTasks = () => {
     // editInput.style.display = "none";
     inputSpan.appendChild(editInput);
     checkbox.setAttribute('class', 'form-check-input me-3');
+    checkbox.setAttribute('id', `check_${tasks[i].index}`);
     checkbox.setAttribute('type', 'checkbox');
     checkbox.checked = tasks[i].completed;
     const spanText = document.createTextNode(tasks[i].description);
     span.appendChild(spanText);
+    span.setAttribute('id', `text_${tasks[i].index}`);
+    if (checkbox.checked) {
+      span.classList.add('text-decoration-line-through')
+    } else {
+      span.classList.remove('text-decoration-line-through')
+    }
 
     // creating col div for checkbox
     const checkboxDiv = document.createElement('div');

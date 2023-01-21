@@ -5,7 +5,7 @@ const listTarget = document.querySelector('.list');
 
 const addInputField = document.getElementById('inputTask');
 
-export const editTask = () => {
+export const editAddTask = () => {
   listTarget.addEventListener('keypress', (e) => {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     if ((e.key === 'Enter') && (e.target.matches('.edit-input'))) {
@@ -32,7 +32,7 @@ export const editTask = () => {
   });
 };
 
-const fixIndex = (tasks) => {
+export const fixIndex = (tasks) => {
   for (let i = 0; i < tasks.length; i += 1) {
     tasks[i].index = i + 1;
   }
