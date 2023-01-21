@@ -1,5 +1,4 @@
 /* eslint-disable import/extensions */
-/* eslint-disable no-loop-func */
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { renderTasks } from './modules/loadTasks.js';
