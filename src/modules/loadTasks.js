@@ -34,9 +34,9 @@ export const renderTasks = () => {
     span.appendChild(spanText);
     span.setAttribute('id', `text_${tasks[i].index}`);
     if (checkbox.checked) {
-      span.classList.add('text-decoration-line-through')
+      span.classList.add('text-decoration-line-through');
     } else {
-      span.classList.remove('text-decoration-line-through')
+      span.classList.remove('text-decoration-line-through');
     }
 
     // creating col div for checkbox
