@@ -24,7 +24,6 @@ export const renderTasks = () => {
     editInput.setAttribute('value', tasks[i].description);
     editInput.setAttribute('class', 'form-control edit-input');
     editInput.setAttribute('id', `list_${tasks[i].index}`);
-    // editInput.style.display = "none";
     inputSpan.appendChild(editInput);
     checkbox.setAttribute('class', 'form-check-input me-3');
     checkbox.setAttribute('id', `check_${tasks[i].index}`);
