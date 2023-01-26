@@ -1,10 +1,11 @@
 /* eslint-disable import/extensions */
 import { renderTasks } from './loadTasks.js';
+import { getData, storeData } from './store.js'
 
 const listTarget = document.querySelector('.list');
 export const updateTaskStatus = () => {
   listTarget.addEventListener('change', (e) => {
-    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const tasks = getData();
     if (e.target.matches('.form-check-input')) {
       const idArray = (e.target.id).split('_');
       const taskId = Number(idArray[idArray.length - 1]);
@@ -13,7 +14,7 @@ export const updateTaskStatus = () => {
           tasks[i].completed = e.target.checked;
         }
       }
-      localStorage.setItem('tasks', JSON.stringify(tasks));
+      storeData(tasks);
       renderTasks();
     }
   });

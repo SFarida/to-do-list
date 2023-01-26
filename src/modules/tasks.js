@@ -1,5 +1,6 @@
 /* eslint-disable import/extensions */
 import { renderTasks } from './loadTasks.js';
+import { getData, storeData } from './store.js'
 
 const listTarget = document.querySelector('.list');
 
@@ -7,7 +8,7 @@ const addInputField = document.getElementById('inputTask');
 
 export const editAddTask = () => {
   listTarget.addEventListener('keypress', (e) => {
-    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const tasks = getData();
     if ((e.key === 'Enter') && (e.target.matches('.edit-input'))) {
       const idArray = (e.target.id).split('_');
       const taskId = Number(idArray[idArray.length - 1]);
@@ -16,7 +17,7 @@ export const editAddTask = () => {
           tasks[i].description = e.target.value;
         }
       }
-      localStorage.setItem('tasks', JSON.stringify(tasks));
+      storeData(tasks);
       renderTasks();
     } else if ((e.key === 'Enter') && (e.target.matches('#inputTask'))) {
       const taskObj = {
@@ -25,7 +26,7 @@ export const editAddTask = () => {
         completed: false,
       };
       tasks.push(taskObj);
-      localStorage.setItem('tasks', JSON.stringify(tasks));
+      storeData(tasks);
       addInputField.value = '';
       renderTasks();
     }
@@ -36,13 +37,13 @@ export const fixIndex = (tasks) => {
   for (let i = 0; i < tasks.length; i += 1) {
     tasks[i].index = i + 1;
   }
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+  storeData(tasks);
 };
 
 export const removeTask = () => {
   listTarget.addEventListener('click', (e) => {
     if (e.target.matches('.fa-trash')) {
-      let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+      let tasks = getData();
       const idArray = (e.target.id).split('_');
       const taskId = Number(idArray[idArray.length - 1]);
       tasks = tasks.filter((task) => task.index !== taskId);

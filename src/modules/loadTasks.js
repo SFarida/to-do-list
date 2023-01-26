@@ -1,8 +1,11 @@
+/* eslint-disable import/extensions */
+import { getData } from './store.js'
+
 let tasks = [];
+const container = document.getElementById('list');
 export const renderTasks = () => {
-  const container = document.getElementById('list');
   container.replaceChildren();
-  tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  tasks = getData();
   const list = document.createElement('ul');
   list.setAttribute('class', 'list-group');
   for (let i = 0; i < tasks.length; i += 1) {
