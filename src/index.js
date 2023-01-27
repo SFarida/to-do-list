@@ -18,6 +18,6 @@ refresh.addEventListener('click', () => {
 
 const completed = document.getElementById('removeCompleted');
 completed.addEventListener('click', () => {
-  clearCompleted()
+  clearCompleted();
   renderTasks();
 });

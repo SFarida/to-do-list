@@ -1,4 +1,6 @@
-import { addTask, removeTask, editTask, completed, clearCompleted } from './modules/store';
+import {
+  addTask, removeTask, editTask, completed, clearCompleted,
+} from './modules/store';
 
 describe('Add task', () => {
   localStorage.removeItem('tasks');
@@ -6,7 +8,7 @@ describe('Add task', () => {
     expect(addTask('sleep')).toEqual([{ completed: false, description: 'sleep', index: 1 }]);
   });
   test('Add task "cook"', () => {
-    expect(addTask('cook')).toEqual([{ completed: false, description: 'sleep', index: 1 },{ completed: false, description: 'cook', index: 2 }]);
+    expect(addTask('cook')).toEqual([{ completed: false, description: 'sleep', index: 1 }, { completed: false, description: 'cook', index: 2 }]);
   });
   test('Edit task "sleep"', () => {
     editTask(1, 'sleeping');
