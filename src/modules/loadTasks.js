@@ -2,8 +2,9 @@
 import { getData } from './store.js';
 
 let tasks = [];
-const container = document.getElementById('list');
+
 export const renderTasks = () => {
+  const container = document.getElementById('list');
   container.replaceChildren();
   tasks = getData();
   const list = document.createElement('ul');

@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 import { renderTasks } from './loadTasks.js';
-import { getData, storeData } from './store.js';
+import { completed, getData } from './store.js';
 
 const listTarget = document.querySelector('.list');
 export const updateTaskStatus = () => {
@@ -9,12 +9,7 @@ export const updateTaskStatus = () => {
     if (e.target.matches('.form-check-input')) {
       const idArray = (e.target.id).split('_');
       const taskId = Number(idArray[idArray.length - 1]);
-      for (let i = 0; i < tasks.length; i += 1) {
-        if (tasks[i].index === taskId) {
-          tasks[i].completed = e.target.checked;
-        }
-      }
-      storeData(tasks);
+      completed(taskId, e.target.checked);
       renderTasks();
     }
   });
