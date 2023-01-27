@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { renderTasks } from './modules/loadTasks.js';
 import { clickListener, keypressListener } from './modules/tasks.js';
 import { updateTaskStatus } from './modules/taskStatus.js';
-import { getData, fixIndex } from './modules/store.js'
+import { getData, fixIndex } from './modules/store.js';
 
 renderTasks();
 keypressListener();

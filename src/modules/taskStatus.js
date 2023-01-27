@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 import { renderTasks } from './loadTasks.js';
-import { getData, storeData } from './store.js'
+import { getData, storeData } from './store.js';
 
 const listTarget = document.querySelector('.list');
 export const updateTaskStatus = () => {

@@ -1,7 +1,6 @@
 /* eslint-disable import/extensions */
-import { add } from 'lodash';
 import { renderTasks } from './loadTasks.js';
-import { addTask, editTask, removeTask } from './store.js'
+import { addTask, editTask, removeTask } from './store.js';
 
 const listTarget = document.querySelector('.list');
 
@@ -12,18 +11,16 @@ export const keypressListener = () => {
     if ((e.key === 'Enter') && (e.target.matches('.edit-input'))) {
       const idArray = (e.target.id).split('_');
       const taskId = Number(idArray[idArray.length - 1]);
-      const taskDesc = e.target.value
+      const taskDesc = e.target.value;
       editTask(taskId, taskDesc);
       renderTasks();
     } else if ((e.key === 'Enter') && (e.target.matches('#inputTask'))) {
-      addTask(addInputField.value)
+      addTask(addInputField.value);
       addInputField.value = '';
       renderTasks();
     }
   });
 };
-
-
 
 export const clickListener = () => {
   listTarget.addEventListener('click', (e) => {

@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-import { getData } from './store.js'
+import { getData } from './store.js';
 
 let tasks = [];
 const container = document.getElementById('list');
