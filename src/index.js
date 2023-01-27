@@ -2,13 +2,13 @@
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { renderTasks } from './modules/loadTasks.js';
-import { removeTask, editAddTask, fixIndex } from './modules/tasks.js';
+import { clickListener, keypressListener } from './modules/tasks.js';
 import { updateTaskStatus } from './modules/taskStatus.js';
-import { getData } from './modules/store.js'
+import { getData, fixIndex } from './modules/store.js'
 
 renderTasks();
-editAddTask();
-removeTask();
+keypressListener();
+clickListener();
 updateTaskStatus();
 
 const refresh = document.getElementById('refresh');
